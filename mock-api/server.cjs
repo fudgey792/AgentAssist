@@ -29,6 +29,12 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 startStandaloneServer(server, {
   listen: { port: 4000 },
+  context: async () => ({}),
+  // ✅ Enable CORS here
+  cors: {
+    origin: 'http://localhost:5173', // Your Vite dev server
+    credentials: true,
+  },
 }).then(({ url }) => {
-  console.log(`Mock API ready at ${url}`);
+  console.log(`🚀 Mock API ready at ${url}`);
 });

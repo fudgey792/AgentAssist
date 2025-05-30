@@ -1,19 +1,26 @@
-import React from 'react';
+import './App.css';
 import CustomerCard from './components/CustomerCard';
+import { useQuery } from '@apollo/client';
+import { GET_CUSTOMERS } from './graphql/queries';
 import type { Customer } from './types';
 
-const mockCustomer: Customer = {
-  id: '1',
-  name: 'Jane Doe',
-  email: 'jane.doe@example.com',
-  createdAt: '2024-05-01',
-};
-
 function App() {
+  // Run the query using Apollo's useQuery hook
+  const { data, loading, error } = useQuery(GET_CUSTOMERS);
+
+  // Handle loading state
+  if (loading) return <p>Loading customers...</p>;
+
+  // Handle error state
+  if (error) return <p>Error fetching customers: {error.message}</p>;
+
+  // Render the UI once data is available
   return (
     <div className="App">
       <h1>Agent Assist Dashboard</h1>
-      <CustomerCard customer={mockCustomer} />
+      {data.customers.map((customer: Customer) => (
+        <CustomerCard key={customer.id} customer={customer} />
+      ))}
     </div>
   );
 }

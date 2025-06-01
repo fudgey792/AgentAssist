@@ -3,6 +3,8 @@ import CustomerCard from './components/CustomerCard';
 import { useQuery } from '@apollo/client';
 import { GET_CUSTOMERS } from './graphql/queries';
 import type { Customer } from './types';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CustomerProfile from './pages/CustomerProfile';
 
 function App() {
   // Run the query using Apollo's useQuery hook

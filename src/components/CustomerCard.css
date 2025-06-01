@@ -1,0 +1,12 @@
+.customer-card {
+    border: solid;
+    border-color: white;
+    border-radius: 10px;
+    margin: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.customer-card:hover {
+  background-color: #363636;
+}

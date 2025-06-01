@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Customer } from '../types';
+import './CustomerCard.css';
 
 type Props = {
     customer: Customer;
@@ -7,8 +8,10 @@ type Props = {
 
 const CustomerCard = ({ customer }: Props) => (
     <div>
-        <h2>{customer.name}</h2>
-        <p>Email: {customer.email}</p>
+        <div className="customer-card">
+            <h2>{customer.name}</h2>
+            <p>Email: {customer.email}</p>
+        </div>
     </div>
 );
 

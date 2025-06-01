@@ -1,15 +1,15 @@
 import React from 'react';
-import type { Customer } from '../types';
+import { useParams } from 'react-router-dom';
 
-type Props = {
-    customer: Customer;
-};
+function CustomerProfile() {
+  const { id } = useParams();
 
-const CustomerProfile = ({ customer }: Props) => (
+  return (
     <div>
-        <h2>{customer.name}</h2>
-        <p>Email: {customer.email}</p>
+      <h2>Customer Profile</h2>
+      <p>Customer ID: {id}</p>
     </div>
-);
+  );
+}
 
 export default CustomerProfile;

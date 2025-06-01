@@ -10,3 +10,13 @@
 .customer-card:hover {
   background-color: #363636;
 }
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}

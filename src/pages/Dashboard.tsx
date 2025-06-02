@@ -22,7 +22,7 @@ function Dashboard() {
   return (
     <div className="App">
       <h1>Agent Assist Dashboard</h1>
-      <button onClick={handleClick}>All Customers</button>
+      <button onClick={handleClick}>{displayed ? "Hide" : "My Customers" }</button>
       {displayed ? data.customers.map((customer: Customer) => (
         <CustomerCard key={customer.id} customer={customer} />
       )) : null}

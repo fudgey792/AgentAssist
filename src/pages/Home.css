@@ -1,0 +1,48 @@
+body {
+    background-color: white;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.home-container{
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-icon {
+    font-size: 200px;
+    margin-bottom: -150px;
+    margin-top: 150px;
+}
+
+h2 {
+    font-size: 80px;
+}
+
+p {
+    margin-top: -60px;
+    color: #444;
+    font-size: 1.95rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.home-button {
+    margin-top: 10px;
+    background: #eee;
+    color: #222;
+    border: none;
+    border-radius: 10px;
+    padding: 4px 16px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px black;
+}
+
+.home-button:hover {
+    background: #ccc;
+    color: black;
+}

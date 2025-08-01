@@ -1,25 +1,25 @@
 import React from "react";
 import './Dashboard.css';
-/*import { useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { GET_CUSTOMERS } from '../graphql/queries';
 import type { Customer } from '../types';
 import CustomerCard from "../components/CustomerCard";
-import { useState } from "react";*/
+import { useState } from "react";
 
 const Dashboard = () => {
 
-  /*const { data, loading, error } = useQuery(GET_CUSTOMERS);
-  const [displayed, setDisplayed] = useState(false);
+  const { data, loading, error } = useQuery(GET_CUSTOMERS);
+  /*const [displayed, setDisplayed] = useState(false);
 
   const handleClick = () => {
     setDisplayed(!displayed);
-  };
+  }; */
 
   if (loading) return <p>Loading customers...</p>;
 
   if (error) return <p>Error fetching customers: {error.message}</p>;
 
-  return (
+  /*return (
     <div className="App">
       <h1>Agent Assist Dashboard</h1>
       <button onClick={handleClick}>{displayed ? "Hide" : "My Customers" }</button>
@@ -61,7 +61,11 @@ const Dashboard = () => {
         <section className="dashboard-grid">
           <div className="dashboard-card">
             <div className="dashboard-card-header">Customers</div>
-            <div className="dashboard-card-body">{/* Render customers here */}</div>
+            <div className="dashboard-card-body">
+              {data.customers && data.customers.map((customer: Customer) => (
+                <CustomerCard key={customer.id} customer={customer} />
+              ))}
+            </div>
             <div className="dashboard-card-footer"><u>View All</u></div>
           </div>
           <div className="dashboard-card">

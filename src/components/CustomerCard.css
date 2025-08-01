@@ -2,9 +2,13 @@
     border: solid;
     border-color: white;
     border-radius: 10px;
-    margin: 15px;
+    margin: 6px 0;        /* less space between cards */
+    padding: 10px 14px;   /* add small padding inside */
+    font-size: 1rem;      /* decrease overall font size */
     cursor: pointer;
     transition: background-color 0.2s ease;
+    /* Optionally, make border thinner: */
+    border-width: 1.5px;
 }
 
 .customer-card:hover {
@@ -19,4 +23,15 @@
 .card-link:hover {
   text-decoration: none;
   color: inherit;
+}
+
+.customer-card h2, .customer-card h3 {
+    font-size: 1.13rem;   /* adjust heading size */
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.customer-card p {
+    font-size: 0.92rem;   /* smaller text for details */
+    margin: 0;
 }

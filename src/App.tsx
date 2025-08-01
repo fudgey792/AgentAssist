@@ -1,4 +1,3 @@
-import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import CustomerProfile from './pages/CustomerProfile';
 import Dashboard from './pages/Dashboard';
